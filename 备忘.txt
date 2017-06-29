@@ -1,0 +1,2 @@
+http://www.cnblogs.com/liuhongfeng/p/5099149.html   微信网页授权获取用户基本信息
+springmvc默认拦截器会拦截静态资源   设置所有的springmvc请求后缀都为.action结尾

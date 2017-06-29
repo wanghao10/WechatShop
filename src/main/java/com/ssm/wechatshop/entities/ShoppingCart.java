@@ -3,47 +3,56 @@ package com.ssm.wechatshop.entities;
 import java.util.List;
 
 /*
- * ¹ºÎï³µ
- * 
+ * è´­ç‰©è½¦
+ *
  */
 public class ShoppingCart {
 
-	//¹ºÎï³µID
+	// è´­ç‰©è½¦ID
 	private int cartId;
-	//ÉÌÆ·ĞòÁĞ
+	// å•†å“åºåˆ—
 	private List<Ware> warelists;
-	//¹ºÎï³µ×Ü¼Û
+	// è´­ç‰©è½¦æ€»ä»·
 	private float price;
-	//½»Ò××´Ì¬
+	// äº¤æ˜“çŠ¶æ€
 	private int status;
+
 	public int getCartId() {
 		return cartId;
 	}
+
 	public void setCartId(int cartId) {
 		this.cartId = cartId;
 	}
+
 	public List<Ware> getWarelists() {
 		return warelists;
 	}
+
 	public void setWarelists(List<Ware> warelists) {
 		this.warelists = warelists;
 	}
+
 	public float getPrice() {
 		return price;
 	}
+
 	public void setPrice(float price) {
 		this.price = price;
 	}
+
 	public int getStatus() {
 		return status;
 	}
+
 	public void setStatus(int status) {
 		this.status = status;
 	}
+
 	@Override
 	public String toString() {
 		return "ShoppingCart [cartId=" + cartId + ", warelists=" + warelists + ", price=" + price + ", status=" + status
 				+ "]";
 	}
-	
+
 }

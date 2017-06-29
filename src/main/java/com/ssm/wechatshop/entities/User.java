@@ -3,90 +3,138 @@ package com.ssm.wechatshop.entities;
 import java.util.List;
 
 /*
- * ÓÃ»§Àà
- * 
- * ×¥È¡Î¢ĞÅµÇÂ¼ĞÅÏ¢
+ * ç”¨æˆ·ç±»
+ *
+ * æŠ“å–å¾®ä¿¡ç™»å½•ä¿¡æ¯
  */
 
 public class User {
-	// ÓÃ»§±êÊ¶
-	private String openId;
-	// ÓÃ»§êÇ³Æ
-	private String nickname;
-	// ĞÔ±ğ£¨1ÊÇÄĞĞÔ£¬2ÊÇÅ®ĞÔ£¬0ÊÇÎ´Öª£©
-	private int sex;
-	// ¹ú¼Ò
-	private String country;
-	// Ê¡·İ
-	private String province;
-	// ³ÇÊĞ
-	private String city;
-	// ÓÃ»§Í·ÏñÁ´½Ó
-	private String headImgUrl;
-	// ÓÃ»§ÌØÈ¨ĞÅÏ¢
-	private List<String> privilegeList;
+    // ç”¨æˆ·æ ‡è¯†
+    private String openId;
+    // ç”¨æˆ·æ˜µç§°
+    private String nickname;
+    // æ€§åˆ«ï¼ˆ1æ˜¯ç”·æ€§ï¼Œ2æ˜¯å¥³æ€§ï¼Œ0æ˜¯æœªçŸ¥ï¼‰
+    private int sex;
+    // å›½å®¶
+    private String country;
+    // çœä»½
+    private String province;
+    // åŸå¸‚
+    private String city;
+    // ç”¨æˆ·å¤´åƒé“¾æ¥
+    private String headImgUrl;
+    // ç”¨æˆ·ç‰¹æƒä¿¡æ¯
+    private List<String> privilegeList;
 
-	public String getOpenId() {
-		return openId;
-	}
 
-	public void setOpenId(String openId) {
-		this.openId = openId;
-	}
+    //è¡¥å……ï¼šæœ€åå…³æ³¨æ—¶é—´
+    private String subscribeTime;
 
-	public String getNickname() {
-		return nickname;
-	}
+    //å…³æ³¨çŠ¶æ€ï¼š1  0 æœªå…³æ³¨ æœªå…³æ³¨
+    private Integer subscribe;
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
 
-	public int getSex() {
-		return sex;
-	}
+    public String getOpenId() {
+        return openId;
+    }
 
-	public void setSex(int sex) {
-		this.sex = sex;
-	}
+    public void setOpenId(String openId) {
+        this.openId = openId;
+    }
 
-	public String getCountry() {
-		return country;
-	}
+    public String getNickname() {
+        return nickname;
+    }
 
-	public void setCountry(String country) {
-		this.country = country;
-	}
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
-	public String getProvince() {
-		return province;
-	}
+    public int getSex() {
+        return sex;
+    }
 
-	public void setProvince(String province) {
-		this.province = province;
-	}
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
 
-	public String getCity() {
-		return city;
-	}
+    public String getCountry() {
+        return country;
+    }
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
-	public String getHeadImgUrl() {
-		return headImgUrl;
-	}
+    public String getProvince() {
+        return province;
+    }
 
-	public void setHeadImgUrl(String headImgUrl) {
-		this.headImgUrl = headImgUrl;
-	}
+    public void setProvince(String province) {
+        this.province = province;
+    }
 
-	public List<String> getPrivilegeList() {
-		return privilegeList;
-	}
+    public String getCity() {
+        return city;
+    }
 
-	public void setPrivilegeList(List<String> privilegeList) {
-		this.privilegeList = privilegeList;
-	}
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getHeadImgUrl() {
+        return headImgUrl;
+    }
+
+    public void setHeadImgUrl(String headImgUrl) {
+        this.headImgUrl = headImgUrl;
+    }
+
+
+
+    public String getSubscribeTime() {
+        return subscribeTime;
+    }
+
+    public void setSubscribeTime(String subscribeTime) {
+        this.subscribeTime = subscribeTime;
+    }
+
+    public Integer getSubscribe() {
+        return subscribe;
+    }
+
+    public void setSubscribe(Integer subscribe) {
+        this.subscribe = subscribe;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "openId='" + openId + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", sex=" + sex +
+                ", country='" + country + '\'' +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", headImgUrl='" + headImgUrl + '\'' +
+
+                ", subscribeTime='" + subscribeTime + '\'' +
+                ", subscribe=" + subscribe +
+                '}';
+    }
+
+    public User(String openId, String nickname, int sex, String country, String province, String city, String headImgUrl, List<String> privilegeList, String subscribeTime, Integer subscribe) {
+        this.openId = openId;
+        this.nickname = nickname;
+        this.sex = sex;
+        this.country = country;
+        this.province = province;
+        this.city = city;
+        this.headImgUrl = headImgUrl;
+        this.subscribeTime = subscribeTime;
+        this.subscribe = subscribe;
+    }
+
+    public User(){}
 }

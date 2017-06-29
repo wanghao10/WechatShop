@@ -1,107 +1,125 @@
 package com.ssm.wechatshop.entities;
 
+import javax.persistence.Entity;
+
 /*
  * @author wanghao
- * @param 
+ * @param
+ *
+ * Êõ¥ÊîπopenidÂ≠óÊÆµ‰∏∫String
  */
+@Entity
 public class Address {
 
-	// ÷˜º¸ Œ®“ª±Í ∂
-	private int id;
-	// ∂‘”¶”√ªßid
-	private int openId;
-	//  °∑›
-	private String province;
-	// ≥« –
-	private String city;
-	// —ß–£
-	private String school;
-	// ¬•∫≈
-	private String buildingNo;
-	// ∑øº‰∫≈
-	private String roomNo;
-	//  ’ªı»À–’√˚
-	private String name;
-	//  ’ªı»ÀµÁª∞
-	private String phone;
+    // ‰∏ªÈîÆ ÂîØ‰∏ÄÊ†áËØÜ
+    private int id;
+    // ÂØπÂ∫îÁî®Êà∑id
+    private String openId;
+    // ÁúÅ‰ªΩ
+    private String province;
+    // ÂüéÂ∏Ç
+    private String city;
+    // Â≠¶Ê†°
+    private String school;
+    // Ê•ºÂè∑
+    private String buildingNo;
+    // ÊàøÈó¥Âè∑
+    private String roomNo;
+    // Êî∂Ë¥ß‰∫∫ÂßìÂêç
+    private String name;
+    // Êî∂Ë¥ß‰∫∫ÁîµËØù
+    private String phone;
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public int getOpenId() {
-		return openId;
-	}
+    public String getOpenId() {
+        return openId;
+    }
 
-	public void setOpenId(int openId) {
-		this.openId = openId;
-	}
+    public void setOpenId(String openId) {
+        this.openId = openId;
+    }
 
-	public String getProvince() {
-		return province;
-	}
+    public String getProvince() {
+        return province;
+    }
 
-	public void setProvince(String province) {
-		this.province = province;
-	}
+    public void setProvince(String province) {
+        this.province = province;
+    }
 
-	public String getCity() {
-		return city;
-	}
+    public String getCity() {
+        return city;
+    }
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-	public String getSchool() {
-		return school;
-	}
+    public String getSchool() {
+        return school;
+    }
 
-	public void setSchool(String school) {
-		this.school = school;
-	}
+    public void setSchool(String school) {
+        this.school = school;
+    }
 
-	public String getBuildingNo() {
-		return buildingNo;
-	}
+    public String getBuildingNo() {
+        return buildingNo;
+    }
 
-	public void setBuildingNo(String buildingNo) {
-		this.buildingNo = buildingNo;
-	}
+    public void setBuildingNo(String buildingNo) {
+        this.buildingNo = buildingNo;
+    }
 
-	public String getRoomNo() {
-		return roomNo;
-	}
+    public String getRoomNo() {
+        return roomNo;
+    }
 
-	public void setRoomNo(String roomNo) {
-		this.roomNo = roomNo;
-	}
+    public void setRoomNo(String roomNo) {
+        this.roomNo = roomNo;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-	@Override
-	public String toString() {
-		return "Address [id=" + id + ", openId=" + openId + ", province=" + province + ", city=" + city + ", school="
-				+ school + ", buildingNo=" + buildingNo + ", roomNo=" + roomNo + ", name=" + name + ", phone=" + phone
-				+ "]";
-	}
+    @Override
+    public String toString() {
+        return "Address [id=" + id + ", openId=" + openId + ", province=" + province + ", city=" + city + ", school="
+                + school + ", buildingNo=" + buildingNo + ", roomNo=" + roomNo + ", name=" + name + ", phone=" + phone
+                + "]";
+    }
+
+    public Address(int id, String openId, String province, String city, String school, String buildingNo, String roomNo, String name, String phone) {
+        this.id = id;
+        this.openId = openId;
+        this.province = province;
+        this.city = city;
+        this.school = school;
+        this.buildingNo = buildingNo;
+        this.roomNo = roomNo;
+        this.name = name;
+        this.phone = phone;
+    }
+    public Address(){}
 
 }

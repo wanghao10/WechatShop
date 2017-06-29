@@ -3,78 +3,78 @@ package com.ssm.wechatshop.entities;
 import java.util.List;
 
 /*
- * ¶©µ¥Àà 
- * 
+ * è®¢å•ç±»
+ *
  */
 public class Indent {
-	//¶©µ¥±àºÅ
-	private int id;
-	//ÉÌÆ·ĞòÁĞ
-	private List<Ware> warelist;
-	//¶©µ¥×Ü¼Û
-	private float price;
-	//¶©µ¥·¢ÆğÈË
-	private int userId;
-	//ÊÇ·ñ½áËã   0ÎªÎ´½áËã  1ÎªÒÑ½áËã
-	private int checkOut;
-	//ÅäËÍ×´Ì¬  0ÎªÎ´ÅäËÍ   1ÅäËÍÖĞ 2ÎªÅäËÍÍê³É
-	private int delivery;
-	//½»Ò××´Ì¬(´ıÖ§¸¶  ´øÆÀ¼Û   ÒÑÍê³É)
-	private String status;
-	//Â¼ÈëÊ±¼ä
-	private String time;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public List<Ware> getWarelist() {
-		return warelist;
-	}
-	public void setWarelist(List<Ware> warelist) {
-		this.warelist = warelist;
-	}
-	public float getPrice() {
-		return price;
-	}
-	public void setPrice(float price) {
-		this.price = price;
-	}
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	public int getCheckOut() {
-		return checkOut;
-	}
-	public void setCheckOut(int checkOut) {
-		this.checkOut = checkOut;
-	}
-	public int getDelivery() {
-		return delivery;
-	}
-	public void setDelivery(int delivery) {
-		this.delivery = delivery;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public String getTime() {
-		return time;
-	}
-	public void setTime(String time) {
-		this.time = time;
-	}
-	@Override
-	public String toString() {
-		return "Indent [id=" + id + ", warelist=" + warelist + ", price=" + price + ", userId=" + userId + ", checkOut="
-				+ checkOut + ", delivery=" + delivery + ", status=" + status + ", time=" + time + "]";
-	}
-	
+    //è®¢å•ç¼–å·
+    private int id;
+    //å•†å“åºåˆ—
+    private List<Ware> warelist;
+    //è®¢å•æ€»ä»·
+    private float price;
+    //è®¢å•å‘èµ·äºº
+    private int userId;
+    //æ˜¯å¦ç»“ç®—   0ä¸ºæœªç»“ç®—  1ä¸ºå·²ç»“ç®—
+    private int checkOut;
+    //é…é€çŠ¶æ€  0ä¸ºæœªé…é€   1é…é€ä¸­ 2ä¸ºé…é€å®Œæˆ
+    private int delivery;
+    //äº¤æ˜“çŠ¶æ€(å¾…æ”¯ä»˜  å¸¦è¯„ä»·   å·²å®Œæˆ)
+    private String status;
+    //å½•å…¥æ—¶é—´
+    private String time;
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public List<Ware> getWarelist() {
+        return warelist;
+    }
+    public void setWarelist(List<Ware> warelist) {
+        this.warelist = warelist;
+    }
+    public float getPrice() {
+        return price;
+    }
+    public void setPrice(float price) {
+        this.price = price;
+    }
+    public int getUserId() {
+        return userId;
+    }
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+    public int getCheckOut() {
+        return checkOut;
+    }
+    public void setCheckOut(int checkOut) {
+        this.checkOut = checkOut;
+    }
+    public int getDelivery() {
+        return delivery;
+    }
+    public void setDelivery(int delivery) {
+        this.delivery = delivery;
+    }
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    public String getTime() {
+        return time;
+    }
+    public void setTime(String time) {
+        this.time = time;
+    }
+    @Override
+    public String toString() {
+        return "Indent [id=" + id + ", warelist=" + warelist + ", price=" + price + ", userId=" + userId + ", checkOut="
+                + checkOut + ", delivery=" + delivery + ", status=" + status + ", time=" + time + "]";
+    }
+
 }

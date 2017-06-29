@@ -2,19 +2,19 @@ package com.ssm.wechatshop.entities;
 
 public class Manager {
 
-	// Î¨Ò»±êÊ¶ Â¥³¤±àºÅ
+	// å”¯ä¸€æ ‡è¯† æ¥¼é•¿ç¼–å·
 	private int managerId;
-	// Â¥³¤ĞÕÃû
+	// æ¥¼é•¿å§“å
 	private String name;
-	// ÃÜÂë
+	// å¯†ç 
 	private String password;
-	// Â¥ºÅ
+	// æ¥¼å·
 	private String buildingNo;
-	// Ñ§Ğ£(¾«È·µ½Ğ£Çø)
+	// å­¦æ ¡(ç²¾ç¡®åˆ°æ ¡åŒº)
 	private String school;
-	// µç»°
+	// ç”µè¯
 	private String phone;
-	// Éí·İÖ¤ºÅ
+	// èº«ä»½è¯å·
 	private String idNumber;
 
 	public int getManagerId() {
@@ -79,4 +79,17 @@ public class Manager {
 				+ buildingNo + ", school=" + school + ", phone=" + phone + ", idNumber=" + idNumber + "]";
 	}
 
+	public Manager(int managerId, String name, String password, String buildingNo, String school, String phone,
+			String idNumber) {
+		this.managerId = managerId;
+		this.name = name;
+		this.password = password;
+		this.buildingNo = buildingNo;
+		this.school = school;
+		this.phone = phone;
+		this.idNumber = idNumber;
+	}
+
+	public Manager() {
+	}
 }

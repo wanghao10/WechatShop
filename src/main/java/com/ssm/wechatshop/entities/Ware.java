@@ -1,90 +1,106 @@
 package com.ssm.wechatshop.entities;
 
 /*
- * ÉÌÆ·Àà
- * 
+ * å•†å“ç±»
+ *ä¿®æ”¹å›¾ç‰‡åœ°å€åˆå¹¶æˆä¸€ä¸ª
  */
 public class Ware {
 
-	//ÉÌÆ·ID
+	// å•†å“ID
 	private int wareId;
-	//ÉÌÆ·Ãû
+	// å•†å“å
 	private String name;
-	//ÉÌÆ·ÃèÊö
+	// å•†å“æè¿°
 	private String describe;
-	//ÉÌÆ·¼Û¸ñ
+	// å•†å“ä»·æ ¼
 	private float price;
-	//ÉÌÆ·Í¼1
-	private String imageUrl1;
-	//ÉÌÆ·Í¼2
-	private String imageUrl2;
-	//ÉÌÆ·Í¼3
-	private String imageUrl3;
-	//ÉÌÆ··ÖÀà
+	// å•†å“å›¾é›†åˆï¼ˆä»¥|åˆ†å‰²å¼€ï¼‰
+	private String imageUrl;
+	// å•†å“åˆ†ç±»
 	private String kind;
-	//Â¼ÈëÊ±¼ä
+	// å½•å…¥æ—¶é—´
 	private String date;
-	//Â¥³¤id
+	// æ¥¼é•¿id
 	private String managerid;
+	
+	//åŸä»·
+	private float yuanjia;
+	
+	public float getYuanjia() {
+		return yuanjia;
+	}
+	public void setYuanjia(float yuanjia) {
+		this.yuanjia = yuanjia;
+	}
+
 	public int getWareId() {
 		return wareId;
 	}
+
 	public void setWareId(int wareId) {
 		this.wareId = wareId;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getDescribe() {
 		return describe;
 	}
+
 	public void setDescribe(String describe) {
 		this.describe = describe;
 	}
+
 	public float getPrice() {
 		return price;
 	}
+
 	public void setPrice(float price) {
 		this.price = price;
 	}
-	public String getImageUrl1() {
-		return imageUrl1;
+
+	public String getImageUrl() {
+		return imageUrl;
 	}
-	public void setImageUrl1(String imageUrl1) {
-		this.imageUrl1 = imageUrl1;
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
-	public String getImageUrl2() {
-		return imageUrl2;
-	}
-	public void setImageUrl2(String imageUrl2) {
-		this.imageUrl2 = imageUrl2;
-	}
-	public String getImageUrl3() {
-		return imageUrl3;
-	}
-	public void setImageUrl3(String imageUrl3) {
-		this.imageUrl3 = imageUrl3;
-	}
+
 	public String getKind() {
 		return kind;
 	}
+
 	public void setKind(String kind) {
 		this.kind = kind;
 	}
+
 	public String getDate() {
 		return date;
 	}
+
 	public void setDate(String date) {
 		this.date = date;
 	}
+
 	public String getManagerid() {
 		return managerid;
 	}
+
 	public void setManagerid(String managerid) {
 		this.managerid = managerid;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Ware [wareId=" + wareId + ", name=" + name + ", describe=" + describe + ", price=" + price
+				+ ", imageUrl=" + imageUrl + ", kind=" + kind + ", date=" + date + ", managerid=" + managerid + "]";
+	}
+
 }

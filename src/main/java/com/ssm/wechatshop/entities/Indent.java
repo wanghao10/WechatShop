@@ -15,6 +15,8 @@ public class Indent {
     private float price;
     //订单发起人
     private int userId;
+    //楼长手机号
+    private String managerPhone;
     //是否结算   0为未结算  1为已结算
     private int checkOut;
     //配送状态  0为未配送   1配送中 2为配送完成
@@ -23,7 +25,19 @@ public class Indent {
     private String status;
     //录入时间
     private String time;
-    public int getId() {
+    /**
+	 * @return managerPhone
+	 */
+	public String getManagerPhone() {
+		return managerPhone;
+	}
+	/**
+	 * @param managerPhone 要设置的 managerPhone
+	 */
+	public void setManagerPhone(String managerPhone) {
+		this.managerPhone = managerPhone;
+	}
+	public int getId() {
         return id;
     }
     public void setId(int id) {

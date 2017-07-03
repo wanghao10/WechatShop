@@ -66,5 +66,22 @@
 		resultMap="BaseResultMap">
 		select * from ware where name like '%' #{val} '%'
 	</select>
+	<delete id="delete" parameterType="int">
+    delete from ware where wareId=#{managerid}
+  	</delete>
 
+
+  	<!-- 多个删除操作 -->
+  	<delete id="deleteBatch" parameterType="java.util.List">
+    	delete from ware where wareId in(
+    	<foreach collection="list" item="item" separator=",">
+      	#{item}
+    	</foreach>
+    	)
+  	</delete>
+	<!-- 插入一条记录 -->
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="wareId">
+    insert into ware(name, describe, price, imageUrl, kind, date, managerid)
+    values (#{name}, #{describe}, #{price}, #{imageUrl}, #{kind}, #{date}, #{managerid})
+  </insert>
 </mapper>

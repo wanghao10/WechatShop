@@ -20,7 +20,7 @@ public class Ware {
 	private String kind;
 	// 录入时间
 	private String date;
-	// 楼长id
+	// 楼长id 
 	private String managerid;
 	
 	//原价

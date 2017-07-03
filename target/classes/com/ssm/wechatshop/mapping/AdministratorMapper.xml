@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.wechatshop.dao.ManagerMapper">
+  	<resultMap id="BaseResultMap" type="com.ssm.wechatshop.entities.Administrator">
+    	<id column="administratorId" jdbcType="String" property="administratorId" />
+    	<result column="password" jdbcType="String" property="password" />
+ 	</resultMap>
+ 	<sql id="Base_Column_List">
+    administratorId,password
+  	</sql>
+ 	<select id="getAdministrator" parameterType="com.ssm.wechatshop.entities.Administrator"
+          resultMap="BaseResultMap">
+    	select
+    	<include refid="Base_Column_List" />
+    		from manager where administratorId=#{administratorId}
+    	<if test="name!=null and !&quot;&quot;.equals(name.trim())">
+      		and password=#{password}
+    	</if>
+  	</select>
+  	<update id="updateAdministrator" parameterType="com.ssm.wechatshop.entities.Administrator">
+  		update administrator 
+  		set 
+  		password=#{password} 
+  		where 
+  		administratorId=#{administratorId}
+  	</update>
+</mapper>

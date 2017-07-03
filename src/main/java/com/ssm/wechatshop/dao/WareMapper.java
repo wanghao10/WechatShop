@@ -52,5 +52,12 @@ public interface WareMapper {
 	 * @return List<Ware>
 	 */
 	List<Ware> findByName(@Param("val") String val);
+	
+//	删除
+	int delete(Ware ware);
+//	批量删除
+	int deleteBatch(List<Integer> list);
+//	插入一条记录
+	int insert(Ware ware);
 
 }

@@ -53,6 +53,6 @@ public class ManagerService {
 	}
 	public List<Indent> getIndents(Manager manager,Indent indent) {
 		indent.setManagerPhone(manager.getPhone());
-		return indentMapper.findByType(indent);;
+		return indentMapper.findByType(indent);
 	}
 }

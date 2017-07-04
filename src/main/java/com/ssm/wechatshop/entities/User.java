@@ -24,7 +24,7 @@ public class User {
     // 用户头像链接
     private String headImgUrl;
     // 用户特权信息
-    private List<String> privilegeList;
+//    private List<String> privilegeList;
 
 
     //补充：最后关注时间

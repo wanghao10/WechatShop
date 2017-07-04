@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssm.wechatshop.dao.ManagerMapper">
-  <resultMap id="BaseResultMap" type="com.ssm.wechatshop.entities.Manager">
-    <id column="managerId" jdbcType="INTEGER" property="managerId" />
-    <result column="m_name" jdbcType="VARCHAR" property="name" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="buildingNo" jdbcType="VARCHAR" property="buildingNo" />
-    <result column="school" jdbcType="VARCHAR" property="school" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="idNumber" jdbcType="VARCHAR" property="idNumber" />
+  <resultMap id="BaseResultMap" type="com.ssm.wechatshop.entities.Indent">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="wareist" jdbcType="VARCHAR" property="wareist" />
+    <result column="price" jdbcType="VARCHAR" property="price" />
+    <result column="userId" jdbcType="VARCHAR" property="userId" />
+    <result column="managerPhone" jdbcType="VARCHAR" property="managerPhone" />
+    <result column="checkOut" jdbcType="INTEGER" property="checkOut" />
+    <result column="delivery" jdbcType="INTEGER" property="delivery" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
   </resultMap>
 
 
@@ -19,15 +21,15 @@
   <select id="findById" parameterType="int" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from manager
-    where managerId = #{managerId,jdbcType=INTEGER}
+    from indent
+    where id = #{indentId,jdbcType=INTEGER}
   </select>
 
   <!--查询语句 查看全部-->
   <select id="findAll" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from manager
+    from indent
   </select>
 
 
@@ -35,39 +37,34 @@
   <select id="findByPage" parameterType="int" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from manager
+    from indent
     limit #{offset,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
   </select>
 
 
   <!--按照自定义条件查找，查询语句 拼接sql条件语句 -->
-  <select id="findByType" parameterType="com.ssm.wechatshop.entities.Manager"
+  <select id="findByType" parameterType="com.ssm.wechatshop.entities.Indent"
           resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from manager where 1=1
-    <if test="name!=null and !&quot;&quot;.equals(name.trim())">
-      and name=#{name}
+    <if test="userId!=null and !&quot;&quot;.equals(userId.trim())">
+      and userId=#{userId}
     </if>
-
-	<if test="password!=null and !&quot;&quot;.equals(password.trim())">
-      and password=#{password}
+    <if test="managerPhone!=null and !&quot;&quot;.equals(managerPhone.trim())">
+      and managerPhone=#{managerPhone}
     </if>
-    
-    <if test="buildingNo!=null and !&quot;&quot;.equals(buildingNo.trim())">
-      and buildingNo=#{buildingNo}
+    <if test="checkOut!=null and checkOut>0">
+      and checkOut=#{checkOut}
     </if>
-    
-    <if test="phone!=null and !&quot;&quot;.equals(phone.trim())">
-      and phone=#{phone}
+    <if test="delivery!=null and delivery>0">
+      and delivery=#{delivery}
     </if>
-    
-    <if test="school!=null and !&quot;&quot;.equals(school.trim())">
-      and school=#{school}
+   	<if test="status!=null and !&quot;&quot;.equals(status.trim())">
+      and status=#{status}
     </if>
-
-    <if test="idnumber!=null and !&quot;&quot;.equals(idnumber.trim())">
-      and idNumber=#{idNumber}
+    <if test="time!=null and !&quot;&quot;.equals(time.trim())">
+      and time=#{time}
     </if>
 
   </select>
@@ -81,8 +78,8 @@
   <!-- 单个删除操作 -->
   <!--插入-->
   <insert id="insert"  useGeneratedKeys="true" keyProperty="managerId">
-    insert into manager(name, password, buildingNo, school, phone, idNumber)
-    values (#{name},#{password},#{buildingno},#{school},#{phone},#{idNumber})
+    insert into indent(wareList, price, userId, managerPhone, checkOut, delivery, status, time)
+    values (#{wareList},#{price},#{userId},#{managerPhone},#{checkOut},#{delivery},#{status},#{time})
   </insert>
 
 
@@ -90,29 +87,30 @@
   <update id="update" parameterType="com.ssm.wechatshop.entities.Manager">
     update manager
     set
-    password=#{password},
-    name=#{name},
-    buildingNo=#{buildingNo},
-    school=#{school},
-    phone=#{phone},
-    idNumber=#{idNumber}
+    wareList=#{wareList}, 
+    price=#{price}, 
+    userId=#{userId}, 
+    managerPhone=#{managerPhone}, 
+    checkOut=#{checkOut}, 
+    delivery=#{delivery}, 
+    status=#{status}, 
+    time=#{time}
 
-    where managerId=#{managerId}
+    where id=#{id}
   </update>
 
   <delete id="delete" parameterType="int">
-    delete from manager where managerId=#{managerId}
+    delete from indent where id=#{id}
   </delete>
 
 
   <!-- 多个删除操作 -->
   <delete id="deleteBatch" parameterType="java.util.List">
-    delete from manager where managerId in(
+    delete from indent where id in(
     <foreach collection="list" item="item" separator=",">
       #{item}
     </foreach>
     )
   </delete>
-
 
 </mapper>

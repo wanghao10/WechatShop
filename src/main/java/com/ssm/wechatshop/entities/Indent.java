@@ -2,6 +2,8 @@ package com.ssm.wechatshop.entities;
 
 import java.util.List;
 
+import net.sf.json.JSONArray;
+
 /*
  * 订单类
  *
@@ -10,11 +12,11 @@ public class Indent {
     //订单编号
     private int id;
     //商品序列
-    private List<Ware> warelist;
+    private String wareList;
     //订单总价
     private float price;
     //订单发起人
-    private int userId;
+    private String userId;
     //楼长手机号
     private String managerPhone;
     //是否结算   0为未结算  1为已结算
@@ -43,11 +45,20 @@ public class Indent {
     public void setId(int id) {
         this.id = id;
     }
-    public List<Ware> getWarelist() {
-        return warelist;
+    public String getWarelist() {
+		return wareList;
     }
-    public void setWarelist(List<Ware> warelist) {
-        this.warelist = warelist;
+    @SuppressWarnings("unchecked")
+    public List<Ware> getWares() {
+		JSONArray jsonArray = JSONArray.fromObject(wareList);
+		 return (List<Ware>) JSONArray.toCollection(jsonArray, Ware.class);
+	}
+    public void setWarelist(String wareList) {
+        this.wareList = wareList;
+    }
+	public void setWares(List<Ware> wareist) {
+    	JSONArray jsonArray = JSONArray.fromObject(wareist);
+		this.wareList= jsonArray.toString();
     }
     public float getPrice() {
         return price;
@@ -55,10 +66,10 @@ public class Indent {
     public void setPrice(float price) {
         this.price = price;
     }
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
     public int getCheckOut() {
@@ -87,7 +98,7 @@ public class Indent {
     }
     @Override
     public String toString() {
-        return "Indent [id=" + id + ", warelist=" + warelist + ", price=" + price + ", userId=" + userId + ", checkOut="
+        return "Indent [id=" + id + ", warelist=" + wareList + ", price=" + price + ", userId=" + userId + ", checkOut="
                 + checkOut + ", delivery=" + delivery + ", status=" + status + ", time=" + time + "]";
     }
 
